@@ -22,7 +22,7 @@ from typing import Literal
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
 from anthropic import Anthropic
-from tier_router import TierRouter, FAST_MODEL, DEEP_MODEL, estimate_cost
+from tier_router import FAST_MODEL, DEEP_MODEL, estimate_cost
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from benchmark_tasks import ALL_TASKS, BenchmarkTask

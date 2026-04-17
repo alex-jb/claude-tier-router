@@ -13,7 +13,7 @@ without measurable quality loss.
 """
 from __future__ import annotations
 
-from typing import Optional, Any
+from typing import Any
 
 from tier_router.logger import CallRecord, record_call
 
