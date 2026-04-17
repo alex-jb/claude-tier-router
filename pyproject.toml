@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "claude-tier-router"
+version = "0.1.0"
+description = "Dual-tier routing for the Anthropic Claude API — Haiku fast, Sonnet deep. Cut your bill without losing quality."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "alex-jb" }]
+keywords = ["claude", "anthropic", "llm", "cost-optimization", "haiku", "sonnet", "claude-code", "skill"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "anthropic>=0.34",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "pytest-cov>=4"]
+
+[project.urls]
+Homepage = "https://github.com/alex-jb/claude-tier-router"
+Issues = "https://github.com/alex-jb/claude-tier-router/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
