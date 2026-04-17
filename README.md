@@ -1,5 +1,9 @@
 # claude-tier-router
 
+[![tests](https://github.com/alex-jb/claude-tier-router/actions/workflows/tests.yml/badge.svg)](https://github.com/alex-jb/claude-tier-router/actions/workflows/tests.yml)
+[![python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org)
+[![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 **Cut your Claude API bill ~10x without losing quality.** A drop-in router over `anthropic.Anthropic` that sends structured/fast tasks to Haiku 4.5 and reasoning/decision tasks to Sonnet 4.6.
 
 Also ships as a [Claude Code skill](#claude-code-skill) that teaches the agent when to use which tier.
@@ -28,7 +32,12 @@ In real use (a trading agent with 9 ML model outputs processed per run), the act
 ## Install
 
 ```bash
-pip install claude-tier-router
+# Until v0.1 hits PyPI, install from git:
+pip install git+https://github.com/alex-jb/claude-tier-router.git
+
+# Or clone for development:
+git clone https://github.com/alex-jb/claude-tier-router.git
+cd claude-tier-router && pip install -e '.[dev]'
 ```
 
 ## Usage
