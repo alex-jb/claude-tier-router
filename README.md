@@ -29,6 +29,8 @@ tiered:       80% * 1.00 + 20% * 3.75 = 1.55 units
 
 In real use (a trading agent with 9 ML model outputs processed per run), the actual savings came out to **~10x** because the bulk of calls were pure JSON reshaping where Haiku is effectively free.
 
+See [`docs/benchmark.md`](docs/benchmark.md) for a reproducible 20-task benchmark across Haiku-only, Sonnet-only, and tiered routing — with a runnable script at [`scripts/run_benchmark.py`](scripts/run_benchmark.py).
+
 ## Install
 
 ```bash
@@ -89,6 +91,10 @@ When in doubt, start with FAST. If the output looks vague, escalate to DEEP and 
 ## Claude Code skill
 
 Drop `.claude/skills/tier-router/` into your Claude Code project and the agent learns when to pick each tier. See [`.claude/skills/tier-router/SKILL.md`](.claude/skills/tier-router/SKILL.md).
+
+## Composes with claude-debate
+
+[`claude-debate`](https://github.com/alex-jb/claude-debate) uses `claude-tier-router` internally — the advocate and critic run on the fast tier, the judge runs on the deep tier. If you install claude-debate, you get this routing for free. Both packages, one pattern.
 
 ## Why not just use `claude-haiku` everywhere?
 
